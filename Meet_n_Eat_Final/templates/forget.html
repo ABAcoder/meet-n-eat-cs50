@@ -1,0 +1,25 @@
+{% extends "prelayout.html" %}
+
+{% block title %}
+    Forgot Username or Password
+{% endblock %}
+
+{% block main %}
+    <div class="forget">
+        <h3 class="forget">Forgot Login Info?</h3>
+        <p class="forget">Indicate below what you have forgotten and follow the instructions you receive in the email sent to you.</p>
+        <form class="forget" action="/forget" method="post">
+            <label for="Login_Info" > Choose forgotten credential: </label>
+            <div class="mb-3">
+                    <select class="form-select mx-auto w-auto" id="Login_Info" name="Login_Info">
+                        <option value="Username">Username</option>
+                        <option value="Password">Password</option>
+                    </select>
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="email" name="email" placeholder="Input Email" type="text">
+            </div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Meetups
+{% endblock %}
+
+{% block main %}
+    <div class="homepage">
+        <h1>Welcome to Meet&Eat!</h1>
+        <p class="hours">Below is a schedule your meetups.</p>
+    </div>
+
+    <p>  </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Matched With</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in range(size) %}
+                <tr>
+                    <td>{{ dates[i] }}</td>
+                    <td>{{ times[i] }}</td>
+                    <td>{{ statuses[i] }}</td>
+                    <td>{{ partners[i] }}</td>
+                    <td>{{ emails[i] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "prelayout.html" %}
+
+{% block title %}
+    Confirm Code
+{% endblock %}
+
+{% block main %}
+    <div class="registered">
+        <h2 class="registered">Confirm Code</h2>
+        <p class="registered-p1">A confirmation code has just been sent to your email. Make sure to check your spam folder.</p>
+        <form class="registered-form1" action="/registered" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="confirm_code" name="confirm_code" placeholder="Confirmation Code" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Confirm Account</button>
+        </form>
+        <p class="registered-p2">If you input the wrong email or want to resend the code, leave the forms above blank and fill out the fields below. 
+            Otherwise, leave these fields blank.</p>
+        <form class="registered-form2" action="/registered" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="new_email_username" name="new_email_username" placeholder="Username" type="text">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="new_email_password" name="new_email_password" placeholder="Password" type="password">
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="new_email_email" name="new_email_email" placeholder="Email" type="text">
+            </div>
+            <button class="btn btn-primary" type="submit">Resend Code</button>
+        </form>
+    </div>
+{% endblock %}
