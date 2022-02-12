@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Book Meetup
+{% endblock %}
+
+{% block main %}
+    <div class="hours">
+        <h1 class="match">Availability</h1>
+        <p class="hours">Select Availability for:</p>
+        <p class="hours">{{ meal }} on {{ date }}</p>
+        <form class="register" action="/hours" method="post">
+            <div class="mb-3">
+                <label for="start">Start:</label>
+                <select class="form-select mx-auto w-auto" id="start" name="start">
+                    {% for time in times%}
+                    <option value={{ time }}>{{ time }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="end">End:</label>
+                <select class="form-select mx-auto w-auto" id="end" name="end">
+                    {% for time in times%}
+                    <option value={{ time }}>{{ time }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

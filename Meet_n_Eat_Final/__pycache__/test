@@ -1,0 +1,12 @@
+CREATE TABLE users (id INTEGER, username TEXT NOT NULL, hash TEXT NOT NULL, firstname TEXT, lastname TEXT, email TEXT, temp_code INT, PRIMARY KEY(id));
+CREATE UNIQUE INDEX username ON users (username);
+
+CREATE TABLE queue (
+q_id INTEGER NOT NULL,
+start TEXT NOT NULL,
+end TEXT NOT NULL,
+user_id INTEGER NOT NULL, status TEXT, partner INTEGER, match INTEGER,
+PRIMARY KEY(q_id),
+FOREIGN KEY(user_id) REFERENCES users(id)
+);
+CREATE INDEX q_id ON queue (user_id);

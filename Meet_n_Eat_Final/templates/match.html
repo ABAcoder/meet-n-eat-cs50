@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Book Meetup
+{% endblock %}
+
+{% block main %}
+    <div class="match">
+        <h1 class="match">Book Meetup</h1>
+        <p>Choose an appropiate time and meal. Schedules can be found <a href="https://dining.harvard.edu/campus-dining/undergraduate-dining/hours-interhouse-restrictions">here</a>.</p>
+        <form class="register" action="/match" method="post">
+            <div class="mb-3">
+                <label class="match" for="date">Date:</label>
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" type="date" id="date" name="date">
+            </div>
+            <div class="mb-3">
+            <label class="match" for="meal" > Meal: </label>
+                <select class="form-select mx-auto w-auto" id="meal" name="meal">
+                    <option value="Breakfast">Breakfast</option>
+                    <option value="Continental Breakfast">Continental Breakfast</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Brunch">Brunch</option>
+                    <option value="Dinner">Dinner</option>
+                </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Book</button>
+        </form>
+    </div>
+
+{% endblock %}
